@@ -1,27 +1,98 @@
-# 20240516PWTP255912314323129
+# MuseoLink
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
+MuseoLink is an academic web development project created as part of the Web Programming course of the Computer Systems Engineering degree.
 
-## Development server
+The project consists of a web platform focused on international museums, designed to provide information about museums and support users in planning their visits through an interactive and responsive interface.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+- Museum catalogue
+- Museum information and history
+- Image galleries
+- Events section
+- Interactive map
+- Ticket form
+- Reviews section
+- Responsive navigation
+- Accessibility-focused interface
+- Responsive design for different screen sizes
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Technologies
 
-## Build
+- Angular
+- TypeScript
+- JavaScript
+- HTML
+- SCSS / CSS
+- Bootstrap
+- RxJS
+- Git & GitHub
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Project Structure
 
-## Running unit tests
+The application follows Angular's component-based architecture, with different components responsible for the main areas of the platform.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Some of the main components include:
 
-## Running end-to-end tests
+- Home
+- Catalogue
+- History
+- Gallery
+- Map
+- Events
+- Reviews
+- Tickets
+- Contact
+- Accessibility
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Getting Started
 
-## Further help
+### Prerequisites
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Make sure you have Node.js and Angular CLI installed.
+
+### Installation
+
+Clone the repository:
+
+git clone https://github.com/danielabrito2003-netizen/MuseoLink.git
+
+Navigate to the project directory:
+
+cd MuseoLink
+
+Install the dependencies:
+
+npm install
+
+Run the development server:
+
+ng serve
+
+Open your browser and navigate to:
+
+http://localhost:4200/
+
+## Documentation
+
+The complete academic project report is available in:
+
+`docs/Relatorio-MuseoLink.pdf`
+
+The report contains additional information about the project, including its objectives, sitemap, mockups, functional and non-functional requirements, usability and accessibility considerations.
+
+## Academic Context
+
+This project was developed during the 2023/2024 academic year as part of the Web Programming course of the Computer Systems Engineering degree.
+
+The project provided practical experience in modern web development, responsive design, component-based development, version control and collaborative software development.
+
+## Authors
+
+- Daniela Brito
+- Rodrigo Castro
+- José Pinheiro
+
+## Note
+
+Firebase integration for data storage and authentication was considered during development but was not fully implemented within the project timeframe.
