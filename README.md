@@ -75,9 +75,9 @@ http://localhost:4200/
 
 ## Documentation
 
-The complete academic project report is available in:
+The complete academic project report is available here:
 
-`docs/Relatorio-MuseoLink.pdf`
+[View the MuseoLink Project Report](docs/Relatorio-MuseoLink.pdf)
 
 The report contains additional information about the project, including its objectives, sitemap, mockups, functional and non-functional requirements, usability and accessibility considerations.
 
