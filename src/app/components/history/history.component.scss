@@ -1,0 +1,35 @@
+.museum-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .museum-title {
+    text-align: left;
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .museum-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .museum-image {
+    flex: 0 0 auto;
+    margin-right: 20px;
+  }
+  
+  .museum-image img {
+    max-width: 500px; /* Definindo um tamanho máximo para a imagem */
+    height: auto;
+  }
+  
+  .museum-description {
+    flex: 1;
+    padding: 20px;
+  }
+  

@@ -1,0 +1,206 @@
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/*             Autor: Daniela Brito; Rodrigo Castro; José Pinheiro         */
+/* Data de alteração: 2024-03-25                                           */
+/*         Descrição: Projeto Museus (styles.scss)                         */
+/*           Cadeira: Programação Web                                      */
+/*           Docente: Patrícia Leite                                       */
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ++++++++++++++++++++++++++++++++ Estilos do Cabeçalho ++++++++++++++++++++++++++++++++ */
+header {
+    background: linear-gradient(to right, #000000, #1a1a1a);
+    color: #C7AE6A;
+    padding: 40 0;
+    display: flex;
+    justify-content: space-between; /* Mantém o logo e os menus separados */
+    align-items: center; 
+}
+
+.logo {
+    margin-left: 150px; /* Mover o logo para a direita */
+}
+
+.logo img {
+    width: 240px; /* Definir a largura do logo */
+    height: auto; /* Manter a proporção */
+}
+
+/* ++++++++++++++++++++++++++++++++ Container para os menus secundário e principal */
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Alinha os menus à direita */
+    height: 100%; /* Ocupa a altura total do cabeçalho */
+    margin-right: 100px;
+}
+
+/* ++++++++++++++++++++++++++++++++ Menu secundário */
+.secondary-menu ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end; /* Alinha os itens do menu à direita */
+    margin-bottom: 10px; /* Espaço entre o menu secundário e o principal */
+}
+
+.secondary-menu ul li {
+    margin-left: 18px;
+}
+
+.secondary-menu ul li a {
+    color: #C7AE6A;
+    font-size: 23px;
+    text-decoration: none;
+}
+
+.secondary-menu ul li a.bilheteira {
+    background-image: url('./assets/images/ico/shop1_2.png');
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    background-size: 18px 18px; /* Ajuste o tamanho conforme necessário */
+    padding-left: 22px; /* Espaço para o ícone */
+}
+
+.secondary-menu ul li a.pesquisar {
+    background-image: url('./assets/images/ico/search1_2.png');
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    background-size: 18px 18px; /* Ajuste o tamanho conforme necessário */
+    padding-left: 22px; /* Espaço para o ícone */
+}
+
+.secondary-menu ul li a.login {
+    background-image: url('./assets/images/ico/login1_3.png');
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    background-size: 18px 18px; /* Ajuste o tamanho conforme necessário */
+    padding-left: 22px; /* Espaço para o ícone */
+}
+
+
+/* ++++++++++++++++++++++++++++++++ Menu de navegação principal */
+.primary-menu {
+    margin-top: 20px; /* Aumenta o espaçamento entre os dois menus */
+}
+
+.primary-menu nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end; /* Alinha os itens do menu à direita */
+}
+
+.primary-menu nav ul li {
+    margin-left: 40px;
+}
+
+.primary-menu nav ul li a {
+    color: #ffffff;
+    font-size: 21px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+
+/* ++++++++++++++++++++++++++++++++ Estilos para as outras secções da página ++++++++++++++++++++++++++++++++ */
+
+/* Estilo do Slider de Destaque */
+.slider {
+    /* Estilo do slider */
+}
+
+/* Estilo do Catálogo de Museus */
+.catalog {
+    /* Estilo do catálogo de museus */
+}
+
+/* Estilo da Galeria de Fotos em Destaque */
+.gallery {
+    /* Estilo da galeria de fotos */
+}
+
+/* Estilo dos Eventos em Destaque */
+.events {
+    /* Estilo dos eventos */
+}
+
+/* Estilo do Mapa Interativo */
+.map {
+    /* Estilo do mapa */
+}
+
+/* ++++++++++++++++++++++++++++++++ Estilos do Rodapé ++++++++++++++++++++++++++++++++*/
+.footer {
+    background-color: #282828; 
+    color: white;
+}
+
+/* ++++++++++++++++++++++++++++++++ Footer Pré */
+
+.footer-pre, .footer-main {
+    padding: 20px;
+    margin-left: 150px;
+    margin-right: 100px;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.social-link {
+    margin-right: 10px;
+    text-decoration: none;
+    color: white;
+    /* Adicione estilos para ícones específicos aqui */
+}
+
+.contact-button, .back-to-top {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+/* ++++++++++++++++++++++++++++++++ Footer Main */
+
+.footer-main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-logo {
+    width: 100px; /* Ajuste conforme necessário */
+    margin-right: 20px;
+}
+
+.contact-info, .footer-links {
+    margin-right: 20px;
+}
+
+/* ++++++++++++++++++++++++++++++++ Footer Post */
+
+.footer-post {
+    background: linear-gradient(to right, #000000, #1a1a1a);
+    height: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 150px; /* Margem esquerda para todo o container dos links */
+}
+
+.footer-post a {
+    font-size: 13px;
+    text-decoration: none;
+    color: white;
+    margin-right: 21px; /* Espaçamento entre os links */
+}
+
+/* Adicione estilos responsivos conforme necessário */
