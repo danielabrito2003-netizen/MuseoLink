@@ -1,1 +1,49 @@
-<p>reviews works!</p>
+<div class="reviews-container">
+    <picture>
+      <source media="(max-width: 480px)" srcset="assets/images/reviews/reviews-bg-small.jpg">
+      <source media="(max-width: 1280px)" srcset="assets/images/reviews/reviews-bg-medium.jpg">
+      <img src="assets/images/reviews/reviews-bg-large.jpg" alt="Background" class="background-img">
+    </picture>
+  
+    <div class="container form-container my-5">
+      <h1 class="text-center mb-4 title">Avaliações dos Museus</h1>
+      <form (ngSubmit)="submitReview()" #reviewForm="ngForm">
+        <div class="mb-3">
+          <label for="museumName" class="form-label">Nome do Museu</label>
+          <select class="form-select" id="museumName" required name="museumName" [(ngModel)]="review.museumName">
+            <option value="" selected disabled>Escolha um museu</option>
+            <option *ngFor="let museum of museums" [value]="museum.name">{{ museum.name }}</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="reviewerName" class="form-label">Seu Nome</label>
+          <input type="text" class="form-control" id="reviewerName" placeholder="Insira o seu nome completo" required name="reviewerName" [(ngModel)]="review.reviewerName">
+        </div>
+        <div class="mb-3">
+          <label for="rating" class="form-label">Classificação</label>
+          <select class="form-select" id="rating" required name="rating" [(ngModel)]="review.rating">
+            <option value="" selected disabled>Escolha uma classificação</option>
+            <option *ngFor="let rating of ratings" [value]="rating">{{ rating }} estrelas</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="comments" class="form-label">Comentários</label>
+          <textarea class="form-control" id="comments" rows="3" placeholder="Escreva a sua mensagem aqui" required name="comments" [(ngModel)]="review.comments"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary w-100 mt-3" [disabled]="!reviewForm.form.valid">Submeter Avaliação</button>
+      </form>
+      <div *ngIf="showSuccessMessage" class="alert alert-success mt-3" role="alert">
+        A sua avaliação foi enviada com sucesso.
+        <div class="recent-reviews mt-3">
+          <h2 class="text-center mb-4">Avaliações Recentes</h2>
+          <div *ngFor="let review of reviews" class="review">
+            <h3>{{ review.museumName }}</h3>
+            <p><strong>Classificação:</strong> {{ review.rating }} estrelas</p>
+            <p><strong>Comentário:</strong> {{ review.comments }}</p>
+            <p><em>— {{ review.reviewerName }}</em></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

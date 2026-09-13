@@ -1,0 +1,79 @@
+.contact-container {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .background-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+  
+  .contact-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+  }
+  
+  .form-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Cor de fundo com transparência */
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    z-index: 3;
+  }
+  
+  h1 {
+    color: #C7AE6A;
+  }
+  
+  .btn-primary {
+    background-color: #C7AE6A;
+    border: none;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .btn-primary:hover {
+    background-color: #B39558;
+    transform: scale(1.05);
+  }
+  
+  .btn-primary:active {
+    background-color: #A0804A;
+    transform: scale(0.95);
+  }
+  
+  .form-control, .form-select {
+    background-color: rgba(68, 68, 68, 0.8); /* Fundo escuro com transparência */
+    color: #fff; /* Texto branco */
+    border: 1px solid #555;
+  }
+  
+  .form-control::placeholder, .form-select::placeholder {
+    color: #ccc; /* Placeholder colorido de branco */
+  }
+  
+  .form-control:focus, .form-select:focus {
+    background-color: rgba(85, 85, 85, 0.8); /* Fundo um pouco mais claro com transparência */
+    color: #fff;
+    border-color: #C7AE6A;
+    box-shadow: 0 0 0 0.2rem rgba(199, 174, 106, 0.25);
+  }
+  
+  .text-danger {
+    color: #ff6666;
+  }
+  

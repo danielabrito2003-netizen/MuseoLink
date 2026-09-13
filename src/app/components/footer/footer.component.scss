@@ -1,0 +1,135 @@
+footer {
+  background: #343a40; /* Cor de fundo escura */
+  color: #f8f9fa; /* Texto claro */
+  padding: 20px 0;
+
+  .footer-title {
+    font-size: 1.5rem; /* Tamanho ajustado */
+    font-weight: normal; /* Remover negrito */
+    color: #ffffff; /* Cor branca */
+  }
+
+  .social-link {
+    font-size: 24px;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #ffc107; /* Cor ao passar o rato por cima */
+    }
+  }
+
+  .newsletter-signup {
+    display: flex;
+    align-items: center;
+    input {
+      flex: 1;
+      margin-right: -1px; /* Remover a margem entre input e botão */
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    button {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  .no-underline {
+    text-decoration: none;
+  }
+
+  hr {
+    border-top: 1px solid #ffffff;
+  }
+
+  .list-unstyled {
+    padding-left: 0;
+  }
+
+  .footer-link {
+    color: #f8f9fa; /* Cor clara para visibilidade */
+    text-decoration: none; /* Remover sublinhado */
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #ffc107; /* Cor ao passar o rato por cima */
+    }
+  }
+
+  .list-inline-item {
+    margin-right: 10px;
+  }
+
+  .btn-outline-light {
+    margin: 0.5rem;
+    border-color: #ffc107;
+    color: #ffc107;
+
+    &:hover {
+      background: #ffc107;
+      color: #343a40;
+    }
+  }
+
+  .footer-bottom {
+    width: 100vw; /* Largura completa da tela */
+    margin-left: calc(-50vw + 50%); /* Centralizar a largura completa */
+    background-color: #000; /* Fundo preto */
+  }
+
+  .fa-arrow-up {
+    font-size: 1.2rem;
+    border: 1px solid #ffc107;
+    border-radius: 50%;
+    padding: 5px;
+    margin-left: 10px; /* Espaço entre o texto e o ícone */
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: #ffc107;
+      color: #343a40;
+    }
+  }
+
+  .footer-image {
+    width: 300px; /* Ajustar tamanho da imagem */
+    margin-top: 0; /* Remover espaço entre a lista e a imagem */
+    margin-left: 15px; /* Espaço à esquerda da imagem */
+  }
+
+  .footer-section-title {
+    color: #ffffff; /* Branco mais forte */
+    font-weight: bold;
+  }
+
+  .email-message {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+
+  @media (max-width: 576px) {
+    .text-md-left {
+      text-align: center !important;
+    }
+
+    .mb-md-0 {
+      margin-bottom: 1rem !important;
+    }
+
+    .newsletter-signup {
+      flex-direction: column;
+      input {
+        margin-right: 0; /* Remover margem entre input e botão */
+        margin-bottom: 0.5rem;
+      }
+      button {
+        width: 100%; /* O botão ocupa toda a largura no mobile */
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .list-inline-item {
+      margin-right: 1rem;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+<!-- versão alfa -->
+<header class="text-light py-4">
+  <div class="container d-flex justify-content-between align-items-center">
+    <!-- Logotipo do site -->
+    <div class="logo">
+      <a routerLink="/">
+        <img src="/assets/images/logo/Logo_MuseoLink_Black_v3_nav.png" alt="MuseoLink Logo" class="img-fluid">
+      </a>
+    </div>
+    <!-- Container dos menus -->
+    <div class="menu-container d-flex align-items-center flex-wrap justify-content-end">
+      <!-- Menu secundário -->
+      <div class="secondary-menu d-flex align-items-center">
+        <ul class="nav justify-content-end">
+          <!-- Link para a bilheteira -->
+          <li class="nav-item">
+            <a routerLink="/tickets" class="nav-link bilheteira">
+              <span class="icon"></span>
+              <span class="menu-text">Bilheteira</span>
+            </a>
+          </li>
+          <!-- Link para a pesquisa -->
+          <li class="nav-item">
+            <a href="#" class="nav-link pesquisar">
+              <span class="icon"></span>
+              <span class="menu-text">Pesquisar</span>
+            </a>
+          </li>
+          <!-- Link para login -->
+          <li class="nav-item">
+            <a href="#" class="nav-link login">
+              <span class="icon"></span>
+              <span class="menu-text">Login</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- Menu hamburguer para dispositivos móveis -->
+      <div class="burger-menu d-block d-md-none ml-3">
+        <div class="burger-menu-icon" (click)="toggleMenu()">
+          &#9776;
+        </div>
+        <!-- Conteúdo do menu hamburguer -->
+        <div *ngIf="menuOpen" class="burger-menu-content">
+          <ul class="nav flex-column">
+            <li class="nav-item"><a routerLink="/catalog" class="nav-link text-light">Catálogo</a></li>
+            <li class="nav-item"><a routerLink="/history" class="nav-link text-light">História</a></li>
+            <li class="nav-item"><a routerLink="/gallery" class="nav-link text-light">Galeria</a></li>
+            <li class="nav-item"><a routerLink="/map" class="nav-link text-light">Mapa</a></li>
+            <li class="nav-item"><a routerLink="/events" class="nav-link text-light">Eventos</a></li>
+            <li class="nav-item"><a routerLink="/reviews" class="nav-link text-light">Avaliações</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Menu principal -->
+      <div class="primary-menu d-none d-md-block">
+        <nav>
+          <ul class="nav">
+            <li class="nav-item"><a routerLink="/catalog" class="nav-link text-light">Catálogo</a></li>
+            <li class="nav-item"><a routerLink="/history" class="nav-link text-light">História</a></li>
+            <li class="nav-item"><a routerLink="/gallery" class="nav-link text-light">Galeria</a></li>
+            <li class="nav-item"><a routerLink="/map" class="nav-link text-light">Mapa</a></li>
+            <li class="nav-item"><a routerLink="/events" class="nav-link text-light">Eventos</a></li>
+            <li class="nav-item"><a routerLink="/reviews" class="nav-link text-light">Avaliações</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>

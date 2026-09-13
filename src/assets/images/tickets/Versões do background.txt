@@ -1,0 +1,3 @@
+Pequena: 480x270 pixels
+Média: 1280x720 pixels
+Grande: 1920x1080 pixels

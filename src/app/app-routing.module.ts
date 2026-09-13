@@ -17,6 +17,7 @@ import { CookiesComponent } from './components/cookies/cookies.component';
 import { AcessibilidadeComponent } from './components/acessibilidade/acessibilidade.component';
 import { TermosComponent } from './components/termos/termos.component';
 import { EnglishSiteComponent } from './components/english-site/english-site.component';
+import { TicketsComponent } from './components/tickets/tickets.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -35,7 +36,9 @@ const routes: Routes = [
   { path: 'cookies', component: CookiesComponent },
   { path: 'acessibilidade', component: AcessibilidadeComponent },
   { path: 'termos', component: TermosComponent },
-  { path: 'english_site', component: EnglishSiteComponent }
+  { path: 'english_site', component: EnglishSiteComponent },
+  { path: 'tickets', component: TicketsComponent },
+  { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
 
 @NgModule({

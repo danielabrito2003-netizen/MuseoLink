@@ -1,1 +1,124 @@
-<p>tickets works!</p>
+<!-- tickets.component.html -->
+<div class="tickets-container">
+  <!-- Responsividade da imagem de fundo -->
+  <picture>
+    <source media="(max-width: 480px)" srcset="assets/images/tickets/ticketbg-small.jpg">
+    <source media="(max-width: 1280px)" srcset="assets/images/tickets/ticketbg-medium.jpg">
+    <img src="assets/images/tickets/ticketbg-large.jpg" alt="Background" class="background-img">
+  </picture>
+
+  <!-- Container principal do formulário -->
+  <div class="container my-5 form-container">
+    <h1 class="text-center mb-4">Bilheteira</h1>
+    
+    <!-- Formulário de compra de bilhetes -->
+    <form (ngSubmit)="onSubmit()" #ticketForm="ngForm">
+      
+      <!-- Campo para o nome completo -->
+      <div class="mb-3">
+        <label for="fullName" class="form-label">Nome Completo</label>
+        <input type="text" class="form-control" id="fullName" [(ngModel)]="fullName" name="fullName" required>
+      </div>
+      
+      <!-- Campo para o endereço de e-mail -->
+      <div class="mb-3">
+        <label for="email" class="form-label">Endereço de E-mail</label>
+        <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email" required email #emailModel="ngModel">
+        <div *ngIf="emailModel.invalid && (emailModel.dirty || emailModel.touched)" class="text-danger">
+          <small>Por favor, insira um endereço de e-mail válido. Exemplo: nome&#64;dominio.com</small>
+        </div>
+      </div>
+      
+      <!-- Campo para seleção de museu -->
+      <div class="mb-3">
+        <label for="museum" class="form-label">Seleção de Museu</label>
+        <select class="form-select" id="museum" [(ngModel)]="selectedMuseum" name="museum" (change)="updateShows()" required>
+          <option value="" selected disabled>Escolha um museu</option>
+          <option value="met">The Metropolitan Museum of Art</option>
+          <option value="louvre">Louvre Museum</option>
+          <option value="british">British Museum</option>
+          <option value="rijks">Rijksmuseum</option>
+          <option value="oriental">Institute for the Study of Ancient Cultures Museum</option>
+        </select>
+      </div>
+      
+      <!-- Campo para seleção de show -->
+      <div class="mb-3">
+        <label for="show" class="form-label">Seleção de Show</label>
+        <select class="form-select" id="show" [(ngModel)]="selectedShow" name="show" required>
+          <option value="" selected disabled>Escolha um show</option>
+          <option *ngFor="let show of shows" [value]="show">{{ show }}</option>
+        </select>
+      </div>
+      
+      <!-- Campo para seleção da data da visita -->
+      <div class="mb-3">
+        <label for="visitDate" class="form-label">Data da Visita</label>
+        <input type="date" class="form-control" id="visitDate" [(ngModel)]="visitDate" name="visitDate" required>
+      </div>
+      
+      <!-- Campo para número de bilhetes -->
+      <div class="mb-3">
+        <label for="ticketCount" class="form-label">Número de Bilhetes</label>
+        <input type="number" class="form-control" id="ticketCount" [(ngModel)]="ticketCount" name="ticketCount" required min="1" max="10" (change)="updateTicketFields()">
+      </div>
+
+      <!-- Campos adicionais gerados dinamicamente para cada bilhete -->
+      <div *ngFor="let ticket of tickets; let i = index" class="mb-3">
+        <h5>Bilhete {{ i + 1 }}</h5>
+        <!-- Campo para o primeiro nome -->
+        <div class="mb-3">
+          <label for="firstName-{{i}}" class="form-label">Primeiro Nome</label>
+          <input type="text" class="form-control" id="firstName-{{i}}" [(ngModel)]="ticket.firstName" name="firstName-{{i}}" required>
+        </div>
+        <!-- Campo para o último nome -->
+        <div class="mb-3">
+          <label for="lastName-{{i}}" class="form-label">Último Nome</label>
+          <input type="text" class="form-control" id="lastName-{{i}}" [(ngModel)]="ticket.lastName" name="lastName-{{i}}" required>
+        </div>
+        <!-- Campo para tipo de bilhete -->
+        <div class="mb-3">
+          <label for="ticketType-{{i}}" class="form-label">Tipo de Bilhete</label>
+          <select class="form-select" id="ticketType-{{i}}" [(ngModel)]="ticket.type" name="ticketType-{{i}}" required>
+            <option value="" selected disabled>Escolha o tipo de bilhete</option>
+            <option value="adult">Adulto</option>
+            <option value="child">Criança</option>
+            <option value="senior">Idoso</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Campo para método de pagamento -->
+      <div class="mb-3">
+        <label for="paymentMethod" class="form-label">Método de Pagamento</label>
+        <select class="form-select" id="paymentMethod" [(ngModel)]="paymentMethod" name="paymentMethod" required>
+          <option value="" selected disabled>Escolha o método de pagamento</option>
+          <option value="credit">Cartão de Crédito</option>
+          <option value="paypal">PayPal</option>
+        </select>
+      </div>
+
+      <!-- Campos adicionais para informações do cartão de crédito -->
+      <div *ngIf="paymentMethod === 'credit'" class="mb-3" id="creditCardInfo">
+        <label for="cardNumber" class="form-label">Número do Cartão de Crédito</label>
+        <input type="text" class="form-control" id="cardNumber" [(ngModel)]="cardNumber" name="cardNumber" required>
+        <label for="cardName" class="form-label mt-2">Nome no Cartão</label>
+        <input type="text" class="form-control" id="cardName" [(ngModel)]="cardName" name="cardName" required>
+        <label for="expiryDate" class="form-label mt-2">Data de Validade</label>
+        <input type="text" class="form-control" id="expiryDate" [(ngModel)]="expiryDate" name="expiryDate" required placeholder="MM/AA">
+        <label for="cvv" class="form-label mt-2">Código de Segurança (CVV)</label>
+        <input type="text" class="form-control" id="cvv" [(ngModel)]="cvv" name="cvv" required>
+      </div>
+
+      <!-- Botão de submissão -->
+      <button type="submit" class="btn btn-primary w-100" [disabled]="loading || ticketForm.invalid">
+        <span *ngIf="!loading">Comprar Bilhetes</span>
+        <span *ngIf="loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+      </button>
+    </form>
+    <!-- Mensagem de sucesso -->
+    <div *ngIf="showSuccessMessage" class="alert alert-success mt-3" role="alert">
+      A sua compra foi realizada com sucesso. Receberá um e-mail de confirmação em breve.
+    </div>
+  </div>
+</div>

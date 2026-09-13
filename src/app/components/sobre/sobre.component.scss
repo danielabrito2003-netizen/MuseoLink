@@ -1,0 +1,115 @@
+#about-us {
+  padding: 40px 0;
+  background-color: #f9f9f9;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+
+  .parallax-container {
+    position: relative;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: #fff;
+  }
+
+  .parallax1 {
+    background-image: url('/assets/images/about/parallax1.jpg');
+  }
+
+  .parallax2 {
+    background-image: url('/assets/images/about/parallax2.jpg');
+  }
+
+  .parallax3 {
+    background-image: url('/assets/images/about/parallax3.jpg');
+  }
+
+  .parallax4 {
+    background-image: url('/assets/images/about/parallax4.jpg');
+  }
+
+  .parallax-content {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+  }
+
+  .parallax-content h2 {
+    font-size: 3em;
+    font-weight: bold;
+    color: #C7AE6A;
+    animation: fadeInDown 1s;
+  }
+
+  .parallax-content p {
+    font-size: 1.5em;
+    animation: fadeInUp 1s;
+  }
+
+  .container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: -100px;
+  }
+
+  .museum-title {
+    color: #C7AE6A;
+    margin-bottom: 20px;
+  }
+
+  .museum-description p {
+    font-size: 1.2em;
+    line-height: 1.6;
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .parallax-container {
+      height: 300px;
+    }
+
+    .parallax-content h2 {
+      font-size: 2.5em;
+    }
+
+    .parallax-content p {
+      font-size: 1.2em;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .museum-description p {
+      font-size: 1.1em;
+    }
+  }
+}

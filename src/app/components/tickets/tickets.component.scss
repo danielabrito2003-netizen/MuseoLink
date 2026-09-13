@@ -1,0 +1,85 @@
+/* tickets.component.scss */
+
+/* Container principal da secção de bilhetes */
+.tickets-container {
+  position: relative;
+  min-height: 100vh; /* Garante que cobre a altura total da tela */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Imagem de fundo */
+.background-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1; /* Define a posição da camada abaixo do conteúdo do formulário */
+}
+
+/* Sobreposição escura para melhorar a legibilidade do formulário 
+.tickets-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2; /* Garante que está acima da imagem de fundo mas abaixo do formulário 
+}
+*/
+
+/* Container do formulário */
+.form-container {
+  background-color: rgba(255, 255, 255, 0.8); /* Cor de fundo com transparência */
+  border-radius: 10px; /* Bordas arredondadas */
+  padding: 20px;
+  width: 100%;
+  max-width: 600px; /* Ajusta a largura da caixa do formulário */
+  z-index: 3; /* Garante que está acima da sobreposição escura */
+}
+
+/* Estilo do título principal */
+h1 {
+  color: #C7AE6A; /* Cor dourada semelhante ao link da bilheteira */
+}
+
+/* Estilo do botão principal */
+.btn-primary {
+  background-color: #C7AE6A; /* Cor de fundo dourada */
+  border: none; /* Remove a borda */
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #B39558; /* Cor de fundo ao passar o rato por cima */
+  transform: scale(1.05);
+}
+
+.btn-primary:active {
+  background-color: #A0804A;
+  transform: scale(0.95);
+}
+
+/* Estilo dos campos do formulário */
+.form-control, .form-select {
+  background-color: #444; /* Fundo escuro */
+  color: #fff; /* Texto branco */
+  border: 1px solid #555; /* Borda cinza-escura */
+}
+
+.form-control::placeholder, .form-select::placeholder {
+  color: #ccc; /* Placeholder colorido de branco */
+}
+
+/* Estilo dos campos do formulário quando focados */
+.form-control:focus, .form-select:focus {
+  background-color: #555; /* Fundo um pouco mais claro */
+  color: #fff; /* Texto branco */
+  border-color: #C7AE6A; /* Borda dourada */
+  box-shadow: 0 0 0 0.2rem rgba(199, 174, 106, 0.25); /* Sombra dourada */
+}

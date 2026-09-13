@@ -1,0 +1,79 @@
+.reviews-container {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .background-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  .form-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  .title {
+    color: #C7AE6A;
+  }
+  
+  .form-label {
+    text-align: left;
+    display: block;
+    color: #000;
+  }
+  
+  .form-control, .form-select {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #444;
+  }
+  
+  .form-control::placeholder, .form-select::placeholder {
+    color: #ccc;
+  }
+  
+  .form-control:focus, .form-select:focus {
+    border-color: #C7AE6A;
+    box-shadow: 0 0 5px rgba(199, 174, 106, 0.5);
+  }
+  
+  .review {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .recent-reviews {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  

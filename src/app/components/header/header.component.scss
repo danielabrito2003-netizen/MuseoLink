@@ -1,0 +1,185 @@
+// versão alfa
+
+header {
+  background: #000000; /* Fundo preto */
+
+  .logo img {
+    width: 204px; /* Reduzido em 15% */
+    height: auto;
+    transition: all 0.3s ease-in-out; /* Transição suave ao passar o rato */
+  }
+
+  .logo img:hover {
+    animation: glow 1s ease-in-out infinite alternate; /* Animação de brilho ao passar o rato */
+  }
+
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 5px #C7AE6A, 0 0 10px #C7AE6A, 0 0 15px #C7AE6A, 0 0 20px #C7AE6A; /* Efeito inicial do brilho */
+    }
+    100% {
+      box-shadow: 0 0 20px #C7AE6A, 0 0 30px #C7AE6A, 0 0 40px #C7AE6A, 0 0 50px #C7AE6A; /* Efeito final do brilho */
+    }
+  }
+
+  .menu-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end; /* Alinha os menus à direita */
+    width: 100%;
+  }
+
+  .secondary-menu .nav-link,
+  .primary-menu .nav-link {
+    font-size: 23px;
+    padding-left: 22px;
+    color: #C7AE6A; /* Cor dourada/amarela */
+    position: relative;
+    text-decoration: none;
+    overflow: hidden;
+  }
+
+  .primary-menu .nav-link {
+    font-size: 21px;
+    font-weight: bold;
+    padding-left: 0; /* Remover padding-left para o menu principal */
+    color: #ffffff; /* Cor branca para o menu principal */
+  }
+
+  /* Removido a animação de sublinhado do menu secundário */
+  .primary-menu .nav-link::before,
+  .primary-menu .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: currentColor; /* Use a cor atual do texto */
+    bottom: 0;
+    left: 50%;
+    transition: width 0.4s ease, left 0.4s ease;
+  }
+
+  .primary-menu .nav-link:hover::before,
+  .primary-menu .nav-link:hover::after {
+    width: 100%; /* Ajustar a largura para cobrir todo o texto */
+    left: -16px; /* Ajustar a posição inicial para começar no início do texto */
+  }
+
+  .secondary-menu .bilheteira .icon,
+  .secondary-menu .pesquisar .icon,
+  .secondary-menu .login .icon {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+    transition: transform 1.5s;
+    background-size: cover; /* Adicionar esta linha para garantir que a imagem de fundo se ajusta corretamente */
+  }
+
+  .secondary-menu .bilheteira .icon {
+    background-image: url('/assets/images/ico/shop1_2.png'); /* Icone de bilheteira */
+  }
+
+  .secondary-menu .pesquisar .icon {
+    background-image: url('/assets/images/ico/search1_2.png'); /* Icone de pesquisa */
+  }
+
+  .secondary-menu .login .icon {
+    background-image: url('/assets/images/ico/login1_3.png'); /* Icone de login */
+  }
+
+  .secondary-menu .bilheteira:hover .icon {
+    animation: moveAndLift 1.5s ease forwards; /* Animação de movimento e levantamento para bilheteira */
+  }
+
+  .secondary-menu .pesquisar:hover .icon {
+    animation: zoomInOut 2s infinite; /* Animação de zoom in e out para pesquisa */
+  }
+
+  .secondary-menu .login:hover .icon {
+    animation: flipHorizontal 2s forwards; /* Animação de flip horizontal para login */
+  }
+
+  @keyframes moveAndLift {
+    0% {
+      transform: translateX(0) rotate(0deg); /* Posição inicial do ícone */
+    }
+    50% {
+      transform: translateX(-15px) rotate(0deg); /* Movimento inicial na horizontal */
+    }
+    70% {
+      transform: translateX(8px) rotate(-20deg); /* Movimento de rotação do ícone */
+    }
+    100% {
+      transform: translateX(0px) rotate(0deg); /* Retorno à posição inicial com rotação */
+    }
+  }
+
+  @keyframes zoomInOut {
+    0%, 100% {
+      transform: scale(1); /* Escala inicial e final */
+    }
+    50% {
+      transform: scale(1.5); /* Zoom in no meio da animação */
+    }
+  }
+
+  @keyframes flipHorizontal {
+    0% {
+      transform: rotateY(0); /* Posição inicial do flip */
+    }
+    100% {
+      transform: rotateY(360deg); /* Posição final do flip completo */
+    }
+  }
+
+  .nav-item {
+    margin-left: 5px; /* Ajustar o espaçamento entre os itens do menu secundário */
+  }
+
+  .primary-menu .nav-item {
+    margin-left: 25px; /* Ajustar o espaçamento entre os itens do menu principal */
+  }
+
+  /* Estilos para tornar o menu responsivo */
+  @media (max-width: 992px) {
+    .primary-menu {
+      display: none; /* Esconder menu principal em telas pequenas */
+    }
+
+    .secondary-menu .menu-text {
+      display: none; /* Esconder texto do menu secundário em telas pequenas */
+    }
+
+    .burger-menu {
+      display: block; /* Mostrar menu hamburguer em telas pequenas */
+    }
+
+    .burger-menu-icon {
+      cursor: pointer;
+      font-size: 24px; /* Tamanho do ícone do menu hamburguer */
+    }
+
+    .burger-menu-content {
+      background: #000000; /* Fundo preto */
+      padding: 10px;
+      border-radius: 5px; /* Bordas arredondadas para o menu hamburguer */
+    }
+
+    .burger-menu-content .nav-item {
+      margin-left: 0;
+      margin-bottom: 10px; /* Espaçamento entre os itens do menu hamburguer */
+    }
+
+    .secondary-menu .nav-link {
+      padding: 0 5px; /* Ajustar o padding do menu secundário em telas pequenas */
+    }
+  }
+
+  @media (min-width: 993px) {
+    .burger-menu {
+      display: none; /* Esconder menu hamburguer em telas grandes */
+    }
+  }
+}

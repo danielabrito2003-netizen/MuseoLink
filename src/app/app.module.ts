@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module'; // Importação do módulo de roteamento
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { CatalogComponent } from './components/catalog/catalog.component';
@@ -19,6 +19,10 @@ import { CookiesComponent } from './components/cookies/cookies.component';
 import { AcessibilidadeComponent } from './components/acessibilidade/acessibilidade.component';
 import { TermosComponent } from './components/termos/termos.component';
 import { EnglishSiteComponent } from './components/english-site/english-site.component';
+import { TicketsComponent } from './components/tickets/tickets.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -39,11 +43,15 @@ import { EnglishSiteComponent } from './components/english-site/english-site.com
     CookiesComponent,
     AcessibilidadeComponent,
     TermosComponent,
-    EnglishSiteComponent
+    EnglishSiteComponent,
+    TicketsComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule // Importação do módulo de roteamento
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

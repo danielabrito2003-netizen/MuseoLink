@@ -1,1 +1,55 @@
-<p>contact works!</p>
+<div class="contact-container">
+    <!-- Responsividade da imagem de fundo -->
+    <picture>
+      <source media="(max-width: 480px)" srcset="assets/images/contact/contact-bg-small.jpg">
+      <source media="(max-width: 1280px)" srcset="assets/images/contact/contact-bg-medium.jpg">
+      <img src="assets/images/contact/contact-bg-large.jpg" alt="Background" class="background-img">
+    </picture>
+  
+    <!-- Container principal do formulário -->
+    <div class="container form-container my-5">
+      <h1 class="text-center mb-4">Contacte-nos</h1>
+      <!-- Formulário de contato -->
+      <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+        <!-- Campo para o nome completo -->
+        <div class="mb-3">
+          <label for="name" class="form-label">Nome Completo</label>
+          <input type="text" class="form-control" id="name" placeholder="Insira o seu nome completo" required name="name" ngModel>
+        </div>
+        <!-- Campo para o endereço de e-mail -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Endereço de E-mail</label>
+          <input type="email" class="form-control" id="email" placeholder="Insira o seu e-mail" required email name="email" ngModel #emailModel="ngModel">
+          <div *ngIf="emailModel.invalid && (emailModel.dirty || emailModel.touched)" class="text-danger">
+            <small>Por favor, insira um endereço de e-mail válido. Exemplo: nome&#64;dominio.com</small>
+          </div>
+        </div>
+        <!-- Campo para o assunto -->
+        <div class="mb-3">
+          <label for="subject" class="form-label">Assunto</label>
+          <select class="form-select" id="subject" required name="subject" ngModel>
+            <option value="" selected disabled>Escolha um assunto</option>
+            <option value="inquiry">Inquérito Geral</option>
+            <option value="feedback">Feedback</option>
+            <option value="support">Suporte</option>
+            <option value="other">Outro</option>
+          </select>
+        </div>
+        <!-- Campo para a mensagem -->
+        <div class="mb-3">
+          <label for="message" class="form-label">Mensagem</label>
+          <textarea class="form-control" id="message" rows="5" placeholder="Escreva a sua mensagem aqui" required name="message" ngModel></textarea>
+        </div>
+        <!-- Botão de envio -->
+        <button type="submit" class="btn btn-primary w-100" [disabled]="loading || contactForm.invalid">
+          <span *ngIf="!loading">Enviar</span>
+          <span *ngIf="loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        </button>
+      </form>
+      <!-- Mensagem de sucesso -->
+      <div *ngIf="showSuccessMessage" class="alert alert-success mt-3" role="alert">
+        A sua mensagem foi enviada com sucesso. Entraremos em contacto consigo em breve.
+      </div>
+    </div>
+  </div>
+  
